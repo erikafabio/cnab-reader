@@ -1,0 +1,17 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>CNAB Reader</title>
+</head>
+<body>
+    <h2>Upload a file</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>
+            {{form.file}}
+        </p>
+        <p> <input type="submit" value="Upload"/> </p>
+    </form>
+</body>
+</html>
