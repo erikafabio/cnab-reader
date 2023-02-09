@@ -35,8 +35,6 @@ def upload(request):
                 line = file.readline()
             
             for transation in transations:
-
-
                 model_file = FileModel(
                     type_of_transition = transation['type_of_transition'],
                     date = transation['date'],
@@ -57,25 +55,26 @@ def upload(request):
 def transations_table(request):
     transations = []
     file = FileModel.objects.all()
+
     for transation in file:
         if transation.type_of_transition == "1":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "debito", 'flow': "Saída", 'sign': "-"})
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "debito", 'flow': "Saída", 'sign': "-", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name })
         elif transation.type_of_transition == "2":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "boleto", 'flow': "Saída", 'sign': "-"})
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "boleto", 'flow': "Saída", 'sign': "-", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})
         elif transation.type_of_transition == "3":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "financiamento", 'flow': "Saída", 'sign': "-"})    
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "financiamento", 'flow': "Saída", 'sign': "-", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})    
         elif transation.type_of_transition == "4":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "credito", 'flow': "Entrada", 'sign': "+"})
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "credito", 'flow': "Entrada", 'sign': "+", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})
         elif transation.type_of_transition == "5":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "recebimento emprestimo", 'flow': "Entrada", 'sign': "+"})
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "recebimento emprestimo", 'flow': "Entrada", 'sign': "+", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})
         elif transation.type_of_transition == "6":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "vendas", 'flow': "Entrada", 'sign': "+"})
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "vendas", 'flow': "Entrada", 'sign': "+", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})
         elif transation.type_of_transition == "7":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "recebimento TED", 'flow': "Entrada", 'sign': "+"})  
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "recebimento TED", 'flow': "Entrada", 'sign': "+", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})  
         elif transation.type_of_transition == "8":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "recebimento DOC", 'flow': "Entrada", 'sign': "+"})    
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "recebimento DOC", 'flow': "Entrada", 'sign': "+", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name})    
         elif transation.type_of_transition == "9":
-            transations.append({'type_of_transition': transation.type_of_transition, 'description': "aluguel", 'flow': "Saída", 'sign': "-"}) 
+            transations.append({'type_of_transition': transation.type_of_transition, 'description': "aluguel", 'flow': "Saída", 'sign': "-", 'value' : transation.value, 'date' : transation.date, 'cpf' : transation.cpf, 'card' : transation.card, 'hour' : transation.hour, 'market_owner' : transation.market_owner, 'market_name' : transation.market_name}) 
                          
     return render(request, 'reader/transations_table.html', {'transations': transations})
 

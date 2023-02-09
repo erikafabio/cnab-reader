@@ -12,92 +12,48 @@
           <th>Descrição</th>
           <th>Natureza</th>
           <th>Sinal</th>
+          <th>Valor</th>
+          <th>Data</th>
+          <th>CPF</th>
+          <th>Cartão</th>
+          <th>Hora</th>
+          <th>Dono da Loja</th>
+          <th>Nome da Loja</th>
           
         </tr>
       </thead>
       <tbody>
+        
         {% for transation in transations %}
         <tr>
           <td>{{ transation.type_of_transition }}</td>
           <td>{{ transation.description }}</td>
           <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-          
-        {% comment %} </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
+          <td>{{ transation.sign }}</td>    
+          <td>{{ transation.value }}</td>    
+          <td>{{ transation.date }}</td>    
+          <td>{{ transation.cpf }}</td>    
+          <td>{{ transation.card }}</td>    
+          <td>{{ transation.hour }}</td>    
+          <td>{{ transation.market_owner }}</td>    
+          <td>{{ transation.market_name }}</td>   
         </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr>
-        <tr>
-          <td>{{ transation.type_of_transition }}</td>
-          <td>{{ transation.description }}</td>
-          <td>{{ transation.flow }}</td>
-          <td>{{ transation.sign }}</td>
-            
-            
-          
-        </tr> {% endcomment %}
         {% endfor %}
       </tbody>
       </table>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
 </body>
 </html>
