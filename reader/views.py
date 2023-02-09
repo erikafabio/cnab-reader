@@ -33,6 +33,7 @@ def upload(request):
                     'market_name' : market_name
                 })
                 line = file.readline()
+                decoded_line = line.decode("utf8")
             
             for transation in transations:
                 model_file = FileModel(
