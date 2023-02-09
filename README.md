@@ -1,6 +1,7 @@
 # Cnab Reader
 
 É um visualizador de arquivos no padrão cnab, através de parseamento a aplicação retorna uma tabela com as transações completas.
+Foi desenvolvido utilizando apenas Django-Rest-Framework 
 
 ## Iniciando o projeto
 
